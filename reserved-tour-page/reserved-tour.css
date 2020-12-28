@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0rem 2rem;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 3rem;
+  background: rgb(105, 102, 101);
+}
+
+.nav-container .logo {
+  color: crimson;
+  font-family: "Lobster", cursive;
+  font-size: 1.8rem;
+}
+
+.nav-container .items-link {
+  display: flex;
+  list-style: none;
+}
+
+.nav-container .items-link li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav-container .items-link a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.4s;
+  background: transparent;
+  padding: 0.4rem 0.8rem;
+}
+
+.nav-container .items-link a:hover,
+.nav-container .items-link a.active {
+  background-color: crimson;
+  transition: 0.4s;
+}
+
+.nav-container .items-link a i {
+  margin-right: 4px;
+}
+
+.nav-container .signout {
+  display: flex;
+  color: #fff;
+}
+
+.nav-container .signout .user-name {
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+.nav-container .signout .signout-btn {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav-container .signout .signout-btn:hover {
+  color: crimson;
+}
+
+.container h2 {
+  font-size: clamp(1.5rem, 3rem, 3.5rem);
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.container .grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.container .grid-container .item {
+  width: 340px;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  box-shadow: 4px 4px 5px #999;
+  overflow: hidden;
+}
+
+.grid-container .item .left {
+  display: flex;
+  background: #43aa8b;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0.4rem;
+}
+
+.grid-container .item .left .img {
+  width: 75px;
+  height: 75px;
+  border: 5px solid #b2b09b;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.grid-container .item .left img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container .item .left button {
+  padding: 0.3rem 1rem;
+  margin-top: 1.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #ef3054;
+  box-shadow: 2px 1px 5px #000;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.grid-container .item .left button.save-btn {
+  margin: auto auto 0.8rem;
+  visibility: hidden;
+}
+
+.grid-container .item .left button:hover {
+  background: transparent;
+  transition: 0.3s;
+}
+
+.grid-container .item .left button i {
+  margin-right: 2px;
+  font-size: 1.1rem;
+}
+
+.grid-container .item .right {
+  padding: 1.5rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  background: #b2b09b;
+}
+
+.grid-container .item .right .input {
+  display: flex;
+  margin-bottom: 0.9rem;
+}
+
+.grid-container .item .right .input input {
+  font-size: 16px;
+  padding-left: 0.2rem;
+  background: none;
+  border: none;
+  outline: none;
+  pointer-events: none;
+  width: 180px;
+}
+
+.grid-container .item .right .info:last-child {
+  margin: 0;
+}
+
+.grid-container .item .right .info {
+  margin-bottom: 0.9rem;
+  display: flex;
+  cursor: context-menu;
+}
+
+.grid-container .right .input label,
+.grid-container .right .info label {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-right: 0.3rem;
+}
+
+.grid-container .right .info label {
+  margin-right: 0.5rem !important;
+}

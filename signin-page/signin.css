@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  padding-left: 1.6rem;
+  border-radius: 1rem;
+  border: 1px solid crimson;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 10rem;
+  background: radial-gradient(#ffffff47, #88ff0082), url(./bg.jpg);
+  background-size: cover;
+}
+
+.logo {
+  color: crimson;
+  font-family: "Lobster", cursive;
+  font-size: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.hero-container .content,
+.hero-container .signin-form {
+  flex: calc(50% - 2rem);
+  max-width: 40rem;
+  padding: 0 0.5rem;
+}
+
+.hero-container .content h2 {
+  font-size: 4.5rem;
+  color: #f1163fd6;
+  font-weight: bold;
+}
+
+.hero-container .content p {
+  font-size: 1.5rem;
+  opacity: 0.6;
+  display: block;
+  padding-left: 1rem;
+}
+
+.signin-form .title {
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1.6rem;
+  font-weight: bold;
+  color: crimson;
+  border-left: 0.5rem solid crimson;
+  padding-left: 0.8rem;
+  border-radius: 2rem;
+}
+
+.signin-form form {
+  width: 80%;
+  margin: auto;
+  padding: 2.8rem 3rem 3.3rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #52ff0045, #ed143d6e);
+  box-shadow: 0 0 0.5rem #793a3a;
+  min-width: 30rem;
+}
+
+.signin-form .info {
+  position: relative;
+}
+
+.signin-form span {
+  position: absolute;
+  left: 1rem;
+  top: 2.3rem;
+  opacity: 0.4;
+  font-size: 1.2rem;
+  transition: transform 0.4s;
+  pointer-events: none;
+}
+
+.signin-form .account input:focus ~ span,
+.signin-form .account input:valid ~ span {
+  transform: translate(-1rem, -1.8rem) scale(0.8);
+  opacity: 1;
+}
+
+.signin-form .password input:focus ~ span,
+.signin-form .password input:valid ~ span {
+  transform: translate(-1rem, -1.8rem) scale(0.8);
+  opacity: 1;
+}
+
+.signin-form button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.8rem;
+  background: crimson;
+  text-transform: uppercase;
+  color: white;
+  border: 0.1rem solid crimson;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-size: 1rem;
+}
+
+.signin-form button:hover {
+  background: transparent;
+  color: crimson;
+  transition: all 0.3s ease-out;
+}
+
+@media (max-width: 1370px) {
+  .container .hero-container .content h2 {
+    font-size: 4rem;
+  }
+
+  .container .hero-container .content p {
+    font-size: 1.3rem;
+  }
+
+  .container .signin-form form {
+    margin-top: 5rem;
+  }
+
+  .container {
+    padding: 0 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .container .logo {
+    font-size: 2rem;
+  }
+
+  .hero-container .content,
+  .hero-container .signin-form {
+    flex: 100%;
+  }
+
+  .container .signin-form form {
+    margin-top: 2rem;
+    padding: 2rem 2.3rem 2.5rem;
+  }
+
+  .container .hero-container .content h2 {
+    font-size: 3rem;
+  }
+
+  .container .hero-container .content p {
+    font-size: 1.1rem;
+  }
+}

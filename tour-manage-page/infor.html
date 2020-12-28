@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý các chuyến du lịch</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="infor.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-container">
+            <div class="logo">
+                Travelling
+            </div>
+            <ul class="items-link">
+                <li><a href="#" class="active"><i class="fas fa-th-list"></i>Quản lý tour</a></li>
+                <li id="account-manage"><a href="../account-manage-page/account-manage.html"><i class="fas fa-users-cog"></i>Quản lý tài khoản</a></li>
+                <li><a href="../reserved-tour-page/reserved-tour.html"><i class="fas fa-shopping-cart"></i>Tour đã đăng ký</a></li>
+            </ul>
+            <div class="signout">
+                <span class="user-name"></span>
+                <div class="signout-btn" title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></div>
+            </div>
+        </nav>
+
+        <header class="header">
+            <h2>Nhập thông tin khách du lịch</h2>
+        </header>
+    </div>
+    <div class="form">
+        <form id='frm' action="" method="POST">
+            <div class="infor-clients">
+
+                <div class="infor-clients__name">
+                    <label for="name">Họ tên:</label>
+                    <input type="text" id="name" name="name" required>                    
+                </div>
+                <div class="infor-clients__phone">
+                    <label for="phone">SĐT:</label>
+                    <input type="tel" id="tel" name="tel" required>
+                </div>
+
+
+                <div class="infor-clients__email">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+
+                </div>
+                <div class="infor-clients__addr">
+                    <label for="addr">Địa chỉ:</label>
+                    <input type="text" name="addr" id="addr" required>
+
+                </div class="infor-clients__area">
+
+                <div>
+                    <label for="area">Khu vực:</label>
+                    <select name="tours" id="area">
+                    </select>
+                </div>
+
+
+                <div class="infor-clients__tours">
+                    <label for="tours">Tuyến:</label>
+                    <select name="tours" id="tours">
+                        <option value="">----Tuyến----</option>
+                    </select>
+                </div>
+                <div class="infor-clients__time">
+                    <label for="time">Thời gian Tour:</label>
+                    <select name="time" id="time">
+                        <option value="">----Lựa chọn thời gian----</option>
+                    </select>
+                </div>
+                <div class="infor-clients__date-go">
+                    <label for="date-go">Ngày khởi hành:</label>
+                    <select name="date-start" id="date-start">
+                        <option>----Ngày khởi hành----</option>
+                    </select>
+                </div>
+                <div class="infor-clients__date-return">
+                    <label for="date-return">Ngày quay về:</label>
+                    <input type="text" id="date-return" name=date-return>
+                </div>
+                <div class="infor-clients__amount">
+                    <label for="amount">Số người:</label>
+                    <input type="number" name="amount" id="amount">
+
+                </div>
+
+                <div class="infor-clients__tguide-1">
+                    <label for="tguide-1">Hướng dẫn viên 1:</label>
+                    <input type="text" id="tguide-1" name="tguide11" required>
+                    <br>
+
+                </div>
+                <div class="infor-clients__tguide-2">
+                    <label for="tguide-2">Hướng dẫn viên 2:</label>
+                    <input type="text" id="tguide-2" name="tguide2" required>
+
+                </div>
+                <div class="infor-clients__driver">
+                    <label for="driver">Tài xế:</label>
+                    <input type="text" id="driver" name="driver" required>
+                </div>
+
+                <div class="infor-clients__cost">
+                    <label for="cost">Chi phí:</label>
+                    <input type="number" id="cost" required>
+                </div>
+                <div class="infor-clients__signin">
+                    <div>
+                        <button id='submit' type='submit'>Đăng kí</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./infor.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phân quyền tài khoản</title>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav-container">
+        <div class="logo">Travelling</div>
+        <ul class="items-link">
+          <li>
+            <a href="../tour-manage-page/infor.html"
+              ><i class="fas fa-th-list"></i>Quản lý tour</a
+            >
+          </li>
+          <li id="account-manage">
+            <a href="#" class="active"
+              ><i class="fas fa-users-cog"></i>Quản lý tài khoản</a
+            >
+          </li>
+          <li>
+            <a href="../reserved-tour-page/reserved-tour.html"
+              ><i class="fas fa-shopping-cart"></i>Tour đã đăng ký</a
+            >
+          </li>
+        </ul>
+        <div class="signout">
+          <span class="user-name"></span>
+          <div class="signout-btn" title="Đăng xuất">
+            <i class="fas fa-sign-out-alt"></i>
+          </div>
+        </div>
+      </nav>
+
+      <h2>Quản lý tài khoản người dùng</h2>
+      <div class="container-account">
+        <div class="insert-container">
+          <button class="btn" onclick="handleInsert()">Thêm tài khoản</button>
+          <div id="form-wrapper-insert" class="form-wrapper">
+            <form id="insert-form">
+              <div class="username-insert input" data-wrong="">
+                <label for="username">Tài khoản:</label>
+                <input type="text" name="username" id="username" />
+              </div>
+
+              <div class="password-insert input" data-wrong="">
+                <label for="password">Mật khẩu:</label>
+                <input type="text" name="password" id="password" />
+              </div>
+
+              <div class="permission input">
+                <label for="permission">Quyền:</label>
+                <select id="permission">
+                  <option value="admin">admin</option>
+                  <option value="staff">staff</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-insert btn">Thêm</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="edit-container">
+          <div class="form-wrapper" id="form-wrapper-edit">
+            <form id="edit-form">
+              <div class="username-edit input" data-wrong="">
+                <label for="username">Tài khoản:</label>
+                <input type="text" name="username" id="editUsername" />
+              </div>
+
+              <div class="password-edit input" data-wrong="">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" name="password" id="editPassword" />
+              </div>
+
+              <div class="permission input">
+                <label for="permission">Quyền:</label>
+                <select id="editPermission">
+                  <option value="admin">admin</option>
+                  <option value="staff">staff</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-edit btn">Sửa</button>
+            </form>
+          </div>
+        </div>
+        <table id="data"></table>
+      </div>
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

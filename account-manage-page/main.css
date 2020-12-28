@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 3rem;
+  background: rgb(105, 102, 101);
+}
+
+.nav-container .logo {
+  color: crimson;
+  font-family: "Lobster", cursive;
+  font-size: 1.8rem;
+}
+
+.nav-container .items-link {
+  display: flex;
+  list-style: none;
+}
+
+.nav-container .items-link li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav-container .items-link a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.4s;
+  background: transparent;
+  padding: 0.4rem 0.8rem;
+}
+
+.nav-container .items-link a:hover,
+.nav-container .items-link a.active {
+  background-color: crimson;
+  transition: 0.4s;
+}
+
+.nav-container .items-link a i {
+  margin-right: 4px;
+}
+
+.nav-container .signout {
+  display: flex;
+  color: #fff;
+}
+
+.nav-container .signout .user-name {
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+.nav-container .signout .signout-btn {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav-container .signout .signout-btn:hover {
+  color: crimson;
+}
+
+.container h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
+.container .container-account table {
+  width: 100%;
+  margin: auto;
+}
+
+.container .container-account table tr:nth-child(1) {
+  background: #c1bdbd !important;
+}
+
+.container .container-account table tr:nth-child(odd) {
+  background: #efefef;
+}
+
+.container .container-account table tr:hover {
+  background: #c1bdbd;
+}
+
+.container .container-account table tr th,
+.container .container-account table tr td {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.container .container-account table tr td,
+.container .container-account table tr th {
+  width: 300px;
+}
+
+.container .container-account table tr td:first-child,
+.container .container-account table tr th:first-child {
+  width: 50px;
+}
+
+.container .container-account table tr td:nth-last-child,
+.container .container-account table tr th:nth-last-child {
+  width: 300px;
+}
+
+.container .container-account table tr td .btn {
+  width: 70px;
+  height: 25px;
+  padding: 4px 6px;
+  margin-top: 7px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container .container-account table tr td .btn:hover,
+.btn:hover {
+  background: transparent !important;
+  border: 1px solid black;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.container .container-account table tr td .btn.edit {
+  background: #1a8c81;
+  margin-right: 10px;
+}
+
+.container .container-account table tr td .btn.remove {
+  background: #d82828;
+}
+
+/*=========Form Insert=========*/
+label {
+  display: inline-block;
+  font-size: 0.9rem;
+  width: 65px;
+}
+
+input {
+  padding: 1px 5px;
+  outline: none;
+  width: calc(100% - 100px);
+}
+
+select {
+  width: 100px;
+  outline: none;
+}
+
+.btn {
+  background: #225198;
+  border: 1px solid transparent;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-insert,
+.btn-edit {
+  background: #fff;
+  color: black;
+  border: 1px solid black;
+  width: auto;
+  padding: 3px 15px;
+  margin-bottom: 0;
+}
+
+.btn-insert:hover {
+  background: #b5dc89 !important;
+  border: 1px solid #b5dc89;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.container .insert-container,
+.container .edit-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.container .form-wrapper {
+  flex: 1;
+  padding-left: 10px;
+  padding-bottom: 17px;
+  transform: translateY(70px);
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.container .form-wrapper.active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.5s ease-out;
+}
+
+.container .form-wrapper #insert-form,
+.container .form-wrapper #edit-form {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container .form-wrapper .input {
+  display: inline-block;
+  flex-basis: 30%;
+  align-self: center;
+}
+
+.container .form-wrapper .permission {
+  flex-basis: 25% !important;
+  margin-right: 5px;
+}
+
+.password-insert,
+.username-insert,
+.password-edit,
+.username-edit {
+  position: relative;
+}
+
+.password-insert::after,
+.username-insert::after,
+.password-edit::after,
+.username-edit::after {
+  position: absolute;
+  content: "" attr(data-wrong) "";
+  width: 50%;
+  height: 5px;
+  left: 75px;
+  bottom: -8px;
+  color: #ff202a;
+  font-size: 0.8rem;
+}
